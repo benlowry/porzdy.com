@@ -1,0 +1,90 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Porter vs. Ozdy</title>
+<style type="text/css">
+body { padding: 0px; margin: 0px; font-family: Arial, Verdana, sans-serif; }
+div { width: 900px; margin: 0px auto; text-align: center; padding: 20px 0px; }
+img { width: 600px; height: 420px; display: block; margin: 0px auto; }
+h1 { color: #666; font-size: 20px; }
+h1 span { color: #F00; display: block; font-size: 30px; margin: 8px 0px; }
+table { width: 600px; margin: 0px auto; }
+th { font-size: 12px; color: #666; }
+td { width: 50%; vertical-align: top; }
+th, td { text-align: center; }
+p { font-size: 16px; color: #333; width: 80%; }
+p span { display: block; font-size: 11px; color: #666; margin-top: 4px; }
+p a { font-weight: bold; color: #07C; }
+</style>
+
+<body>
+
+	<div id="container">
+
+		<h1>WHO WILL MAKE IT TO FGS: <span id="Counter">-55 days, -18 hours, -21 minutes, and 0 seconds to go!</span></h1>
+
+		<img src="porzdy.png" alt="Porzdy!" width="600" height="420">
+
+		<table>
+			<tbody>
+			<tr>
+				<td>
+					<p><a href="http://armorgames.com/play/6804/pixel-purge">Pixel Purge</a>
+					<span>September 2010</span></p>
+				</td>
+				<td>
+					<p><a href="http://porzdy.com/#">Pengees (unreleased)</a>
+					<span>February 2010</span></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p>"When I said I was going to release a game for Halloween, it was less 
+						to do with the fact that I haven’t released a game for a long time, 
+						and more to do with wanting to say something."
+						<span>Porter, November 2012</span></p>
+				</td>
+				<td>
+					<p>
+					"Webmaster please contact support@hostgator.com."
+					<span>Ozdy, November 2012</span></p>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+<script type="text/javascript">
+
+var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+	yr = 2013,
+	m = 3,
+	d = 24;
+
+setInterval(function()
+{
+	var today = new Date();
+	var todayy = today.getYear(),
+		todaym = today.getMonth(),
+		todayd = today.getDate(),
+		todayh = today.getHours(),
+		todaymin = today.getMinutes(),
+		todaysec = today.getSeconds();
+		
+	if (todayy < 1000)
+		todayy += 1900;
+
+	var todaystring = months[todaym] + " " + todayd + ", " + todayy + " " + todayh + ":" + todaymin + ":" + todaysec;
+	var futurestring = months[m-1] + " " + d + ", " + yr;
+	var dd = Date.parse(futurestring) - Date.parse(todaystring)
+	var dday = Math.floor(dd/(60*60*1000*24)*1),
+		dhour = Math.floor((dd%(60*60*1000*24))/(60*60*1000)*1),
+		dmin = Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1),
+		dsec = Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1);
+
+	document.getElementById("Counter").innerHTML = dday + " days, " + dhour + " hours, " + dmin + " minutes, and " + dsec + " seconds to go!";
+}, 1000);
+
+</script>
+
+</body>
+</html>
